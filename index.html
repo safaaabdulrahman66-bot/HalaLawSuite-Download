@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hala LawSuite | المنظومة الذكية لإدارة مكاتب المحاماة والدعاوى</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: linear-gradient(135deg, #070d19 0%, #0f172a 55%, #172554 100%);
+      color: #f8fafc;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    .container { max-width: 1050px; margin: 0 auto; padding: 30px 20px 60px; }
+    .hero {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 24px;
+      padding: 42px 28px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+      margin-bottom: 34px;
+    }
+    .logo-emblem {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 18px;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 2px solid #f59e0b;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+    }
+    .brand-en {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #f59e0b;
+      margin-bottom: 6px;
+    }
+    .brand-sub {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+    .platform-notice {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.14);
+      border: 1px solid #f59e0b;
+      color: #fde68a;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin: 0 auto 26px;
+      max-width: 720px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 16px 38px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(245, 158, 11, 0.5);
+    }
+    .meta-tags {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 24px;
+    }
+    .section-title span { color: #f59e0b; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      padding: 24px;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover { border-color: rgba(245, 158, 11, 0.55); }
+    .card-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .card h3 {
+      font-size: 1.15rem;
+      color: #fbbf24;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .card p { font-size: 0.95rem; color: #cbd5e1; }
+    .editions {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 34px;
+    }
+    .editions h2 {
+      color: #38bdf8;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .editions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .edition-box {
+      background: rgba(30, 41, 59, 0.65);
+      border-radius: 14px;
+      padding: 18px;
+      border-right: 4px solid #f59e0b;
+    }
+    .edition-box h4 { color: #f8fafc; font-size: 1.08rem; margin-bottom: 6px; }
+    .edition-box p { color: #94a3b8; font-size: 0.92rem; }
+    .install-steps {
+      background: rgba(30, 41, 59, 0.55);
+      border-radius: 18px;
+      padding: 24px 28px;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      margin-bottom: 30px;
+    }
+    .install-steps h3 { color: #34d399; margin-bottom: 12px; font-size: 1.15rem; }
+    .install-steps ol { padding-right: 20px; color: #cbd5e1; font-size: 0.95rem; }
+    .install-steps li { margin-bottom: 6px; }
+    footer {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.88rem;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="logo-emblem" aria-label="Hala LawSuite Logo">
+        <svg width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="32,6 6,20 58,20" fill="#F59E0B" />
+          <rect x="9" y="21" width="46" height="4" fill="#FBBF24" />
+          <rect x="13" y="27" width="5" height="23" fill="#F8FAFC" />
+          <rect x="24" y="27" width="5" height="23" fill="#F8FAFC" />
+          <rect x="35" y="27" width="5" height="23" fill="#F8FAFC" />
+          <rect x="46" y="27" width="5" height="23" fill="#F8FAFC" />
+          <rect x="8" y="51" width="48" height="4" fill="#FBBF24" />
+          <rect x="5" y="56" width="54" height="4" fill="#F59E0B" />
+        </svg>
+      </div>
+      <div class="brand-en">Hala LawSuite</div>
+      <div class="brand-sub">المنظومة الذكية الشاملة لإدارة مكاتب المحاماة والدعاوى القضائية</div>
+
+      <div class="platform-notice">
+        📱 البرنامج يعمل الآن فقط على نظام أندرويد .. وقريباً سيعمل على نظام iOS لهواتف الآيفون
+      </div>
+      <br />
+      <a class="download-btn" href="https://github.com/safaaabdulrahman66-bot/HalaLawSuite-Download/releases/latest/download/com.safaa.halalawsuite.apk">
+        ⬇️ تحميل التطبيق الآن (نسخة الأندرويد الرسمية v1.2)
+      </a>
+      <div class="meta-tags">
+        إصدار 1.2 &bull; يعمل بدون إنترنت &bull; حماية وتشفير كامل لبيانات المكتب
+      </div>
+    </div>
+
+    <h2 class="section-title">أبرز مميزات منظومة <span>Hala LawSuite</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>إدارة شاملة للدعاوى والموكلين</h3>
+        <p>تسجيل بيانات الدعاوى والموكلين والخصوم والمحاكم برقم موحد فريد، مع بحث ذكي فوري وتعديل سريع لكافة التفاصيل.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>المكتبة القانونية العراقية (17 قانوناً)</h3>
+        <p>تضم الدستور العراقي وأهم 16 قانوناً نافذاً (المدني، العقوبات، المرافعات، أصول المحاكمات، الأحوال الشخصية، التنفيذ وغيرها) مع إمكانية إضافة قوانين مخصصة وربط المواد مباشرة بكل دعوى.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>تصدير ملف الدعوى الموحد PDF</h3>
+        <p>دمج صفحة غلاف رسمية + المواد القانونية المستند إليها + كافة مستندات وصور الدعوى في ملف PDF واحد جاهز للطباعة أو المشاركة الفورية.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📸</div>
+        <h3>الأرشفة الذكية وضغط الصور</h3>
+        <p>تصوير أوراق الدعوى وهويات الموكلين بالكاميرا مع ضغط تلقائي فائق الدقة تحت 70 KB للحفاظ على مساحة الهاتف وسرعة الأداء.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>سجل الوكالات القانونية المصور</h3>
+        <p>أرشفة صفحات الوكالة وباركود التحقق لكل دعوى، مع تنبيهات انتهاء الصلاحية وتصدير الوكالة كملف PDF مستقل بضغطة زر.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔔</div>
+        <h3>جدول الجلسات ومنبه المواعيد</h3>
+        <p>توثيق قرارات الجلسات وتواريخ المرافعات القادمة مع نظام تنبيه صوتي مسبق (قبل ساعة، يوم، أو يومين) حتى والهاتف مقفل.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏱️</div>
+        <h3>حاسبة المدد القانونية</h3>
+        <p>حساب مواعيد الطعن والاستئناف والتمييز والمدد القانونية بدقة متناهية لتفادي فوات المواعيد الحتمية.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>الإدارة المالية وأتعاب المحاماة</h3>
+        <p>متابعة المقبوضات والمصروفات وأتعاب كل دعوى بدقة ووضوح تام.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>أمان فائق ونسخ احتياطي مشفر</h3>
+        <p>تشفير قاعدة البيانات بمعيار AES-256، وحماية ذاتية تمسح البيانات تلقائياً في حال فقدان الهاتف وعدم اتصاله بالإنترنت لمدة أسبوع.</p>
+      </div>
+    </div>
+
+    <div class="editions">
+      <h2>خيارات الترخيص والتفعيل التجاري</h2>
+      <div class="editions-grid">
+        <div class="edition-box">
+          <h4>👤 النسخة الشخصية (جهاز واحد)</h4>
+          <p>مخصصة للمحامي الفرد للعمل بكامل الصلاحيات والمكتبة القانونية والأرشفة على هاتفه الشخصي.</p>
+        </div>
+        <div class="edition-box">
+          <h4>🏢 النسخة المكتبية (متعددة الأجهزة)</h4>
+          <p>مخصصة لمكاتب المحاماة والشركات القانونية لتفعيل التطبيق على 3 أجهزة أو أكثر بنفس رمز الترخيص مع إمكانية الترقية في أي وقت.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="install-steps">
+      <h3>📲 طريقة التثبيت على هواتف الأندرويد:</h3>
+      <ol>
+        <li>اضغط على زر <strong>«تحميل التطبيق الآن»</strong> في أعلى الصفحة وانتظر اكتمال تنزيل الملف.</li>
+        <li>افتح ملف التثبيت من إشعارات الهاتف أو مجلد التنزيلات (Downloads).</li>
+        <li>في حال طلب النظام السماح بالتثبيت من هذا المصدر (المتصفح)، اضغط <strong>السماح / الإعدادات</strong> ثم اختر <strong>تثبيت (Install)</strong>.</li>
+      </ol>
+    </div>
+
+    <footer>
+      جميع الحقوق محفوظة &copy; 2026 منظومة Hala LawSuite &bull; تطوير المهندس والمحامي صفاء عبد الرحمن
+    </footer>
+  </div>
+</body>
+</html>
